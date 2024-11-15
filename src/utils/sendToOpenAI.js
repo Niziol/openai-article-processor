@@ -5,16 +5,23 @@ const openai = new OpenAI({ apiKey });
 
 /**
  * Sends a prompt to the OpenAI API and retrieves the completion response.
- * @param {string} prompt - The prompt to send to OpenAI.
+ * @param {string} userPrompt - The user's prompt containing specific instructions or content for processing.
+ * @param {string} [systemPrompt=''] - A directive defining the assistant's behavior, context, and output guidelines.
  * @param {string} [model='gpt-4o-mini'] - Optional model to use for completion.
  * @returns {Promise<Object>} - The completion response from OpenAI.
  * @throws {Error} - If the API call fails.
  */
-async function sendToOpenAI(prompt, model = 'gpt-4o-mini') {
+async function sendToOpenAI(userPrompt, systemPrompt = '', model = 'gpt-4o-mini') {
 	try {
 		const completion = await openai.chat.completions.create({
 			model,
-			messages: [{ role: 'user', content: prompt }],
+			messages: [
+        {
+          role: 'system',
+          content: systemPrompt
+        },
+        { role: 'user', content: userPrompt }
+      ],
 		});
 
 		return completion;
