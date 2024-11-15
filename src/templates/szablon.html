@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sztuczna inteligencja: wpływ i wyzwania</title>
+  <style>
+    body {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 800px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+      padding-bottom: 10px;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      height: auto;
+      max-width: 100%;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    figcaption {
+      margin-top: 10px;
+      font-style: italic;
+      text-align: center;
+      color: #7f8c8d;
+    }
+
+    .content {
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .content {
+        padding: 15px;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const contentWrapper = document.createElement('div');
+      contentWrapper.classList.add('content');
+
+      const bodyChildren = Array.from(document.body.children);
+      contentWrapper.append(...bodyChildren);
+      document.body.appendChild(contentWrapper);
+
+      const headers = contentWrapper.querySelectorAll('h2');
+      const toc = document.createElement('nav');
+      toc.innerHTML = '<h2>Spis treści</h2><ul></ul>';
+      const tocList = toc.querySelector('ul');
+
+      headers.forEach((header, index) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#header-${index}`;
+        a.textContent = header.textContent;
+
+        li.appendChild(a);
+        tocList.appendChild(li);
+
+        header.id = `header-${index}`;
+      });
+
+      contentWrapper.insertBefore(toc, contentWrapper.querySelector('h2'));
+    });
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
