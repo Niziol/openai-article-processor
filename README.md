@@ -28,6 +28,9 @@ This project can be useful for content creators, bloggers, and web developers lo
 - Suggests image placements using `<img>` tags with placeholder `src` and descriptive `alt` attributes.
 - Adds captions to images with `<figcaption>`.
 - Outputs clean HTML code ready for use.
+- Includes `szablon.html`, a template file for previewing articles, with CSS and JavaScript for formatting and navigation.
+- `podglad.html` provides a full preview of the article, combining the template with the processed article content.
+
 
 ## Setup
 ### Prerequisites
@@ -56,6 +59,9 @@ This project can be useful for content creators, bloggers, and web developers lo
    node src/index.js
    ```
 2. The processed HTML will be saved in `src/output/artykul.html`.
+3. Use `szablon.html` as a template for formatting and previewing articles. The `<body>` section remains empty and ready for inserting the processed article content.
+4. Open `podglad.html` to view the fully formatted article with all styles and navigation features applied.
+
 
 ### Example
 Input file (`src/article.txt`):
