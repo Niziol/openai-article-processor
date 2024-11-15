@@ -8,9 +8,6 @@
 * [Features](#features)
 * [Setup](#setup)
 * [Usage](#usage)
-* [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Contact](#contact)
 
 ## General Information
 The OpenAI Article Processor is designed to simplify the process of converting plain text articles into structured, SEO-friendly HTML. By leveraging the OpenAI API, the project can:
